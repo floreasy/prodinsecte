@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aperçu hero — comparaison variantes</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&amp;family=Bricolage+Grotesque:wght@500;700;800&amp;family=Karla:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  .apercu-label {
+    background: #222; color: #fff; font-family: sans-serif;
+    padding: 10px 16px; font-size: 14px; font-weight: 700;
+    letter-spacing: .03em; position: sticky; top: 0; z-index: 5;
+  }
+  .apercu-label small { font-weight: 400; opacity: .7; margin-left: 8px; }
+
+  /* ── Variante 1 : full-bleed adouci (coin haut-gauche arrondi) ── */
+  .v1 .hero-slides { border-top-left-radius: 28px; }
+
+  /* ── Variante 2 : image contenue (carte avec gouttière + coins arrondis) ── */
+  .v2 .hero {
+    padding-right: max(24px, calc((100vw - 1140px) / 2));
+    padding-top: calc(40px * var(--sp));
+    padding-bottom: calc(40px * var(--sp));
+  }
+  .v2 .hero-text {
+    padding-top: calc(36px * var(--sp));
+    padding-bottom: calc(36px * var(--sp));
+  }
+  .v2 .hero-slides {
+    border-radius: 20px;
+    min-height: clamp(360px, 38vw, 520px);
+    box-shadow: 0 18px 40px rgba(0,0,0,.25);
+  }
+</style>
+</head>
+<body>
+
+<div class="apercu-label">ACTUEL — full-bleed <small>image jusqu'au bord droit de l'écran, sans marge</small></div>
+<section class="hero v0">
+  <div class="hero-text">
+    <span class="kicker">Élevage artisanal <span class="dot">●</span> Antibes (06)</span>
+    <h1>Des vers de farine élevés ici, pour une alimentation animale plus saine</h1>
+    <p class="lead" style="max-width: 52ch;">
+      Prod'Insectes élève des vers de farine (<em>Tenebrio molitor</em>) à Antibes,
+      en pratiques d'agriculture biologique. Sans additif ni colorant, nourris de
+      végétal local — pour vos poules, poissons, animaux de compagnie et la faune du jardin.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px;">
+      <a class="btn btn-primary" href="#">Découvrir nos produits</a>
+      <a class="btn btn-on-dark" href="#">Nous contacter</a>
+    </div>
+  </div>
+  <div class="hero-slides">
+    <img class="active" src="assets/slide-vers.jpg" alt="">
+  </div>
+</section>
+
+<div class="apercu-label">VARIANTE 1 — full-bleed adouci <small>même image plein bord, mais coin haut-gauche arrondi</small></div>
+<section class="hero v1">
+  <div class="hero-text">
+    <span class="kicker">Élevage artisanal <span class="dot">●</span> Antibes (06)</span>
+    <h1>Des vers de farine élevés ici, pour une alimentation animale plus saine</h1>
+    <p class="lead" style="max-width: 52ch;">
+      Prod'Insectes élève des vers de farine (<em>Tenebrio molitor</em>) à Antibes,
+      en pratiques d'agriculture biologique. Sans additif ni colorant, nourris de
+      végétal local — pour vos poules, poissons, animaux de compagnie et la faune du jardin.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px;">
+      <a class="btn btn-primary" href="#">Découvrir nos produits</a>
+      <a class="btn btn-on-dark" href="#">Nous contacter</a>
+    </div>
+  </div>
+  <div class="hero-slides">
+    <img class="active" src="assets/slide-vers.jpg" alt="">
+  </div>
+</section>
+
+<div class="apercu-label">VARIANTE 2 — image contenue <small>marge à droite + coins arrondis, look « carte » symétrique</small></div>
+<section class="hero v2">
+  <div class="hero-text">
+    <span class="kicker">Élevage artisanal <span class="dot">●</span> Antibes (06)</span>
+    <h1>Des vers de farine élevés ici, pour une alimentation animale plus saine</h1>
+    <p class="lead" style="max-width: 52ch;">
+      Prod'Insectes élève des vers de farine (<em>Tenebrio molitor</em>) à Antibes,
+      en pratiques d'agriculture biologique. Sans additif ni colorant, nourris de
+      végétal local — pour vos poules, poissons, animaux de compagnie et la faune du jardin.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px;">
+      <a class="btn btn-primary" href="#">Découvrir nos produits</a>
+      <a class="btn btn-on-dark" href="#">Nous contacter</a>
+    </div>
+  </div>
+  <div class="hero-slides">
+    <img class="active" src="assets/slide-vers.jpg" alt="">
+  </div>
+</section>
+
+</body>
+</html>
