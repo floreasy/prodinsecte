@@ -424,6 +424,7 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
 }
 .gauge .g-fill {
+  display: block;
   height: 100%;
   width: 0;
   background: var(--green);
