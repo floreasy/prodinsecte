@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<title>La démarche — Élevage d'insectes bio et économie circulaire à Antibes | Prod'Insectes</title>
+<meta name="description" content="Victor Burte, docteur en agronomie, élève des vers de farine à Antibes en pratiques d'agriculture biologique : nourriture 100 % végétale issue d'invendus bio locaux, guano valorisé en engrais organique."></meta>
+<link rel="preconnect" href="https://fonts.googleapis.com"></link>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&amp;family=Bricolage+Grotesque:wght@500;700;800&amp;family=Karla:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"></link>
+<link rel="stylesheet" href="site.css"></link>
+<script src="theme-boot.js"></script>
+<style>
+.story p { font-size: 1.06rem; }
+.demarche-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+.demarche-photo { max-width: 400px; width: 100%; justify-self: center; border-radius: var(--radius); }
+@media (max-width: 880px) {
+  .demarche-intro { grid-template-columns: 1fr; }
+  .demarche-photo { max-width: 420px; }
+}
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.pillar {
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.pillar .p-num {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+  font-family: var(--font-head);
+  font-weight: 900;
+  margin-bottom: 14px;
+  background: var(--kraft);
+}
+.pillar h3 { font-size: 1.06rem; font-weight: 800; text-transform: uppercase; margin: 0 0 8px; }
+.pillar p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+@media (max-width: 880px) {
+  .pillars { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .pillars { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="assets/logo2.png" alt="Prod'Insectes — élevage artisanal de vers de farine à Antibes">
+    </a>
+    <nav class="site-nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="Produits.html">Nos produits</a>
+      <a href="Demarche.html" class="active" aria-current="page">La démarche</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Portrait + récit ──────────────────────────────────── -->
+  <section class="band band-green" data-screen-label="Démarche — portrait">
+    <div class="container demarche-intro">
+      <div class="story reveal">
+        <span class="kicker">Qui suis-je <span class="dot">●</span> La démarche</span>
+        <h1 class="section-title" style="font-size: clamp(2rem, 4.4vw, 3.2rem);">Élever des insectes, pour mieux nourrir</h1>
+        <p>
+          Je m'appelle Victor Burte, j'ai 33 ans. Docteur en fonctionnement des
+          agrosystèmes, avec un cursus en biologie, écologie et agronomie, j'ai passé
+          des années à étudier la manière dont nos systèmes agricoles fonctionnent —
+          et la manière dont ils pourraient fonctionner mieux.
+        </p>
+        <p>
+          Le constat est simple : pour accompagner la transition des agriculteurs vers des
+          pratiques éco-responsables, il faut commencer par la base — produire une
+          alimentation animale plus saine et respectueuse de l'environnement.
+        </p>
+        <p>
+          Les insectes sont une réponse évidente : une source concentrée de protéines et de
+          lipides, riche en omégas 3 et 6, idéale pour les volailles, les poissons, les
+          animaux de compagnie et les petits habitants du jardin.
+        </p>
+        <p>
+          Alors j'ai créé Prod'Insectes : un élevage artisanal de vers de farine, ici à
+          Antibes, conduit en pratiques d'agriculture biologique — sans additif, sans
+          colorant, sans protéine animale, avec une nourriture 100&nbsp;% végétale.
+        </p>
+      </div>
+      <img class="demarche-photo reveal" style="--d: 0.15s;" src="assets/marche-producteur.jpg" alt="Victor Burte sur son stand au marché de producteurs">
+    </div>
+  </section>
+
+  <!-- ── Bandeau ───────────────────────────────────────────── -->
+  <div class="strip" aria-hidden="true">
+    <div class="strip-inner">
+      <span>Docteur en agrosystèmes</span><span class="sep">◆</span>
+      <span>Biologie · Écologie · Agronomie</span><span class="sep">◆</span>
+      <span>Élevage artisanal</span><span class="sep">◆</span>
+      <span>Antibes · Alpes-Maritimes</span><span class="sep">◆</span>
+      <span>Docteur en agrosystèmes</span><span class="sep">◆</span>
+      <span>Biologie · Écologie · Agronomie</span><span class="sep">◆</span>
+      <span>Élevage artisanal</span>
+    </div>
+  </div>
+
+  <!-- ── Les piliers ───────────────────────────────────────── -->
+  <section class="band" data-screen-label="Démarche — piliers">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Concrètement <span class="dot">●</span> Comment on élève</span>
+        <h2 class="section-title">Un élevage conduit comme un agrosystème</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal" style="--d: 0s;">
+          <span class="p-num">1</span>
+          <h3>Une nourriture 100% végétale</h3>
+          <p>Avoine, fruits et légumes non transformés. Aucune protéine animale,
+          aucun additif, aucun colorant — jamais.</p>
+        </div>
+        <div class="pillar reveal" style="--d: 0.1s;">
+          <span class="p-num">2</span>
+          <h3>Des invendus bio valorisés</h3>
+          <p>Un circuit de récupération des fruits et légumes bio invendus, auprès de
+          distributeurs locaux, nourrit l'élevage au quotidien.</p>
+        </div>
+        <div class="pillar reveal" style="--d: 0.2s;">
+          <span class="p-num">3</span>
+          <h3>Des insectes nutritifs</h3>
+          <p>Le ver de farine concentre protéines, lipides et omégas 3 et 6 :
+          un complément idéal pour volailles, poissons et animaux de compagnie.</p>
+        </div>
+        <div class="pillar reveal" style="--d: 0.3s;">
+          <span class="p-num">4</span>
+          <h3>Rien ne se perd</h3>
+          <p>Le guano de l'élevage devient un engrais organique concentré, qui permet
+          de réduire l'usage d'engrais chimiques dans les cultures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Économie circulaire ───────────────────────────────── -->
+  <section class="band band-green" id="cycle" data-screen-label="Démarche — économie circulaire">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="kicker">Le cycle complet <span class="dot">●</span> Économie circulaire</span>
+        <h2 class="section-title">Économie circulaire 100% bio</h2>
+        <p class="lead">
+          C'est la colonne vertébrale de Prod'Insectes : chaque étape nourrit la suivante,
+          et la boucle se referme dans les cultures locales.
+        </p>
+      </div>
+
+      <div class="cycle-wrap">
+        <div class="cycle">
+          <svg class="cycle-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <marker id="cycle-arrow" viewBox="0 0 8 8" refX="6.4" refY="4" markerWidth="3.6" markerHeight="3.6" orient="auto"><path d="M 0 0.6 L 7.4 4 L 0 7.4 Z" fill="currentColor"></path></marker>
+            </defs>
+            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+              <path d="M 58.1 11.9 A 39 39 0 0 1 79 23.9" marker-end="url(#cycle-arrow)"></path>
+              <path d="M 87.1 38 A 39 39 0 0 1 87.1 62" marker-end="url(#cycle-arrow)"></path>
+              <path d="M 79 76.1 A 39 39 0 0 1 58.1 88.2" marker-end="url(#cycle-arrow)"></path>
+              <path d="M 41.9 88.2 A 39 39 0 0 1 21 76.1" marker-end="url(#cycle-arrow)"></path>
+              <path d="M 12.9 62 A 39 39 0 0 1 12.9 38" marker-end="url(#cycle-arrow)"></path>
+              <path d="M 21 23.9 A 39 39 0 0 1 41.9 11.9" marker-end="url(#cycle-arrow)"></path>
+            </g>
+          </svg>
+          <div class="cycle-center">
+            <div class="cc-inner">
+              <strong>Rien ne se perd, tout se transforme</strong>
+              <small>Antibes · Circuit court</small>
+            </div>
+          </div>
+          <div class="cycle-node" style="left: 50%; top: 11%; --d: 0s;">
+            <span class="cn-dot">1</span>
+            <span class="cn-label">Invendus bio locaux</span>
+          </div>
+          <div class="cycle-node" style="left: 83.8%; top: 30.5%; --d: 0.7s;">
+            <span class="cn-dot">2</span>
+            <span class="cn-label">Nourriture de l'élevage</span>
+          </div>
+          <div class="cycle-node" style="left: 83.8%; top: 69.5%; --d: 1.4s;">
+            <span class="cn-dot">3</span>
+            <span class="cn-label">Vers de farine</span>
+            <span class="cn-tag">Alimentation animale</span>
+          </div>
+          <div class="cycle-node" style="left: 50%; top: 89%; --d: 2.1s;">
+            <span class="cn-dot">4</span>
+            <span class="cn-label">Guano</span>
+          </div>
+          <div class="cycle-node" style="left: 16.2%; top: 69.5%; --d: 2.8s;">
+            <span class="cn-dot">5</span>
+            <span class="cn-label">Engrais organique</span>
+          </div>
+          <div class="cycle-node" style="left: 16.2%; top: 30.5%; --d: 3.5s;">
+            <span class="cn-dot">6</span>
+            <span class="cn-label">Cultures locales</span>
+          </div>
+        </div>
+
+        <!-- Variante mobile -->
+        <div class="cycle-list" role="list">
+          <div class="cl-item" role="listitem"><span class="cn-dot">1</span><span class="cn-label">Invendus bio locaux</span></div>
+          <div class="cl-arrow"></div>
+          <div class="cl-item" role="listitem"><span class="cn-dot">2</span><span class="cn-label">Nourriture de l'élevage</span></div>
+          <div class="cl-arrow"></div>
+          <div class="cl-item" role="listitem"><span class="cn-dot">3</span><span class="cn-label">Vers de farine → alimentation animale</span></div>
+          <div class="cl-arrow"></div>
+          <div class="cl-item" role="listitem"><span class="cn-dot">4</span><span class="cn-label">Guano</span></div>
+          <div class="cl-arrow"></div>
+          <div class="cl-item" role="listitem"><span class="cn-dot">5</span><span class="cn-label">Engrais organique</span></div>
+          <div class="cl-arrow"></div>
+          <div class="cl-item" role="listitem"><span class="cn-dot">6</span><span class="cn-label">Cultures locales… et on recommence</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Engagements ───────────────────────────────────────── -->
+  <section class="band band-paper" data-screen-label="Démarche — engagements">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="kicker">Nos engagements <span class="dot">●</span> Noir sur kraft</span>
+        <h2 class="section-title">Ce qu'on vous garantit</h2>
+      </div>
+      <div class="stamps">
+        <div class="stamp reveal" style="--rot: -4deg; --d: 0s; color: var(--green-deep);">
+          <strong>100% naturel &amp; bio</strong>
+          <small>0 additif</small>
+        </div>
+        <div class="stamp reveal" style="--rot: 3deg; --d: 0.1s; color: var(--ocre-deep);">
+          <strong>Production locale</strong>
+          <small>Antibes · 06</small>
+        </div>
+        <div class="stamp reveal" style="--rot: -2deg; --d: 0.2s; color: var(--ink);">
+          <strong>Économie circulaire</strong>
+          <small>Invendus bio valorisés</small>
+        </div>
+        <div class="stamp reveal" style="--rot: 4deg; --d: 0.3s; color: var(--green-deep);">
+          <strong>Sans colorants ni additifs</strong>
+          <small>100% végétal</small>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 44px;">
+        <a class="btn btn-primary" href="Produits.html">Découvrir nos produits</a>
+        <a class="btn btn-outline" href="Contact.html">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Prod'Insectes <span class="leaf">●</span></p>
+        <p style="max-width: 40ch; opacity: 0.85;">
+          Élevage artisanal de vers de farine à Antibes (Alpes-Maritimes).
+          Alimentation animale naturelle et engrais organique bio, en économie circulaire.
+        </p>
+      </div>
+      <div>
+        <h4>Le site</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="Produits.html">Nos produits</a></li>
+          <li><a href="Demarche.html">La démarche</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:victor.burte@gmail.com">victor.burte@gmail.com</a></li>
+          <li>Antibes, Alpes-Maritimes</li>
+          <li><a href="https://www.linkedin.com/company/prod-insectes" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-baseline">
+      <span>© 2026 Prod'Insectes — Antibes, Alpes-Maritimes</span>
+      <a href="#">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<div class="grain" aria-hidden="true"></div>
+
+<script src="site.js"></script>
+
+</body>
+</html>

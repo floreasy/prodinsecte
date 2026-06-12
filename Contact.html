@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<title>Contact — Prod'Insectes, élevage de vers de farine à Antibes</title>
+<meta name="description" content="Contactez Prod'Insectes à Antibes (Alpes-Maritimes) : commandes de vers de farine et d'engrais organique bio, demandes professionnelles et distribution."></meta>
+<link rel="preconnect" href="https://fonts.googleapis.com"></link>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&amp;family=Bricolage+Grotesque:wght@500;700;800&amp;family=Karla:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"></link>
+<link rel="stylesheet" href="site.css"></link>
+<script src="theme-boot.js"></script>
+<style>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(28px, 5vw, 60px);
+  align-items: start;
+}
+.contact-card {
+  background: var(--paper);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: clamp(24px, 4vw, 40px);
+}
+.info-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.info-list li { display: grid; gap: 3px; }
+.info-list .il-label {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ocre-deep);
+}
+.info-list a { text-decoration: underline; text-underline-offset: 3px; }
+.form-success {
+  display: none;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--green-deep);
+  color: var(--paper);
+  padding: 24px;
+  text-align: center;
+}
+.form-success strong { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px; }
+form.sent .form-fields { display: none; }
+form.sent + .form-success, form.sent .form-success { display: block; }
+@media (max-width: 880px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="assets/logo2.png" alt="Prod'Insectes — élevage artisanal de vers de farine à Antibes">
+    </a>
+    <nav class="site-nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="Produits.html">Nos produits</a>
+      <a href="Demarche.html">La démarche</a>
+      <a href="Contact.html" class="active" aria-current="page">Contact</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main>
+
+  <section class="band" data-screen-label="Contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Contact <span class="dot">●</span> On vous répond vite</span>
+        <h1 class="section-title" style="font-size: clamp(2rem, 4.4vw, 3.2rem);">Écrivez-nous</h1>
+        <p class="lead">
+          Une commande, une question sur l'élevage, un point de vente à proposer ?
+          Le formulaire ci-dessous ou un simple mail — comme vous préférez.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Formulaire (envoi simulé, mailto en secours) -->
+        <div class="contact-card reveal">
+          <form id="contact-form" novalidate="novalidate">
+            <div class="form-fields">
+              <div class="field">
+                <label for="f-nom">Votre nom</label>
+                <input id="f-nom" name="nom" type="text" autocomplete="name" required="required" placeholder="Prénom et nom">
+              </div>
+              <div class="field">
+                <label for="f-mail">Votre e-mail</label>
+                <input id="f-mail" name="email" type="email" autocomplete="email" required="required" placeholder="vous@exemple.fr">
+              </div>
+              <div class="field">
+                <label for="f-profil">Vous êtes</label>
+                <select id="f-profil" name="profil">
+                  <option>Particulier — animaux de compagnie</option>
+                  <option>Particulier — basse-cour / jardin</option>
+                  <option>Aquariophile / pêcheur</option>
+                  <option>Professionnel — éleveur / maraîcher / horticulteur</option>
+                  <option>Professionnel — animalerie / magasin bio / coopérative</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-msg">Votre message</label>
+                <textarea id="f-msg" name="message" required="required" placeholder="Bonjour Victor, …"></textarea>
+              </div>
+              <p id="form-error" style="display: none; color: var(--ocre-deep); font-weight: 700; margin: 0 0 14px;">
+                Merci de renseigner votre nom, un e-mail valide et un message.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+                <button class="btn btn-primary" type="submit">Envoyer le message</button>
+                <a href="mailto:victor.burte@gmail.com" style="font-size: 0.92rem;">ou écrire directement par mail</a>
+              </div>
+            </div>
+            <div class="form-success" role="status">
+              <strong>Message envoyé — merci !</strong>
+              Nous revenons vers vous très vite à l'adresse indiquée.
+            </div>
+          </form>
+        </div>
+
+        <!-- Coordonnées -->
+        <div class="contact-card reveal" style="--d: 0.1s; background: var(--kraft);">
+          <ul class="info-list">
+            <li>
+              <span class="il-label">E-mail</span>
+              <a href="mailto:victor.burte@gmail.com">victor.burte@gmail.com</a>
+            </li>
+            <li>
+              <span class="il-label">Localisation</span>
+              <span>Antibes, Alpes-Maritimes (06)</span>
+            </li>
+            <li>
+              <span class="il-label">Sur les marchés</span>
+              <span>Marché de la Garoupe (Cap d'Antibes), tous les troisièmes dimanches du mois</span>
+            </li>
+            <li>
+              <span class="il-label">Réseaux</span>
+              <a href="https://www.linkedin.com/company/prod-insectes" target="_blank" rel="noopener">LinkedIn — Prod'Insectes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Encart pros ───────────────────────────────────────── -->
+  <section class="band band-tight" id="pros" data-screen-label="Contact — professionnels">
+    <div class="container">
+      <div class="callout callout-ink reveal">
+        <div class="co-text">
+          <h3>Professionnels &amp; distributeurs</h3>
+          <p>Éleveur, maraîcher, pépiniériste, horticulteur, animalerie, magasin bio ou
+          coopérative : nous cherchons des partenaires locaux. Parlons volumes, tarifs
+          et logistique.</p>
+        </div>
+        <a class="btn btn-on-dark" href="mailto:victor.burte@gmail.com?subject=Demande%20professionnelle%20—%20Prod'Insectes">Écrire à Victor</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Prod'Insectes <span class="leaf">●</span></p>
+        <p style="max-width: 40ch; opacity: 0.85;">
+          Élevage artisanal de vers de farine à Antibes (Alpes-Maritimes).
+          Alimentation animale naturelle et engrais organique bio, en économie circulaire.
+        </p>
+      </div>
+      <div>
+        <h4>Le site</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="Produits.html">Nos produits</a></li>
+          <li><a href="Demarche.html">La démarche</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:victor.burte@gmail.com">victor.burte@gmail.com</a></li>
+          <li>Antibes, Alpes-Maritimes</li>
+          <li><a href="https://www.linkedin.com/company/prod-insectes" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-baseline">
+      <span>© 2026 Prod'Insectes — Antibes, Alpes-Maritimes</span>
+      <a href="#">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<div class="grain" aria-hidden="true"></div>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var nom = document.getElementById('f-nom');
+    var mail = document.getElementById('f-mail');
+    var msg = document.getElementById('f-msg');
+    var err = document.getElementById('form-error');
+    var ok = nom.value.trim() !== '' && /.+@.+\..+/.test(mail.value) && msg.value.trim() !== '';
+    if (!ok) {
+      err.style.display = 'block';
+      return;
+    }
+    err.style.display = 'none';
+    form.classList.add('sent');
+  });
+})();
+</script>
+
+<script src="site.js"></script>
+
+</body>
+</html>
