@@ -253,6 +253,8 @@ p:last-child { margin-bottom: 0; }
   clip-path: polygon(1% 8%, 4% 0%, 23% 4%, 45% 0%, 68% 5%, 88% 0%, 97% 6%, 100% 45%, 98% 90%, 94% 100%, 70% 95%, 48% 100%, 26% 94%, 7% 100%, 0% 88%, 2% 50%);
 }
 .kicker.on-dark { background: rgba(247, 241, 225, 0.94); color: var(--ink); }
+/* sur fond beige clair (band-paper), le surlignage prend le beige foncé */
+.band-paper .kicker { background: var(--kraft); }
 .kicker .dot { color: var(--ocre); }
 
 /* ── Sections / bandes de couleur ───────────────────────────── */
@@ -676,36 +678,29 @@ html.no-anim *, html.no-anim *::before, html.no-anim *::after {
   .site-nav.open { display: flex; }
   .site-nav a { padding: 13px 14px; }
   .nav-toggle { display: inline-block; }
-  .cycle { display: none; }
-  .cycle-list { display: grid; gap: 0; max-width: 360px; margin: 0 auto; }
-  .cycle-list .cl-item { display: flex; align-items: center; gap: 14px; }
-  .cycle-list .cl-arrow {
-    margin-left: 23px;
-    height: 26px;
-    border-left: 2.5px dashed currentColor;
-    opacity: 0.6;
+  /* on garde le cercle sur smartphone, en plus petit */
+  .cycle-list { display: none; }
+  /* on annule le padding du conteneur pour que le wrap occupe toute la largeur
+     de l'écran : le cercle, plus étroit que le wrap, se recentre alors vraiment */
+  .cycle-wrap { margin-left: -24px; margin-right: -24px; }
+  .cycle { width: min(620px, calc(100vw - 24px)); }
+  .cycle-node { width: clamp(72px, 27%, 100px); gap: 5px; }
+  .cycle-node .cn-dot { width: 40px; height: 40px; font-size: 0.95rem; }
+  .cycle-node .cn-label {
+    font-size: clamp(0.52rem, 2.5vw, 0.64rem);
+    letter-spacing: 0.03em;
+    padding: 3px 6px;
   }
-  .cycle-list .cn-dot {
-    flex: none;
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    border: 2.5px solid currentColor;
-    background: var(--paper);
-    color: var(--ink);
-    display: grid;
-    place-items: center;
-    font-family: var(--font-head);
-    font-weight: 900;
-  }
-  .cycle-list .cn-label {
-    font-family: var(--font-head);
-    font-weight: 700;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
+  /* le badge reste dans la largeur de la pastille (wrap) pour ne pas
+     déborder à droite et déséquilibrer le centrage du cercle */
+  .cycle-node .cn-tag { font-size: 0.5rem; padding: 2px 7px; max-width: 100%; white-space: normal; line-height: 1.15; }
+  .cycle-center .cc-inner { max-width: 52%; }
 }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
   .gauge { grid-template-columns: 92px 1fr 56px; }
+  .cycle-node { width: clamp(64px, 30%, 86px); }
+  .cycle-node .cn-dot { width: 34px; height: 34px; font-size: 0.85rem; }
+  .cycle-node .cn-label { font-size: clamp(0.46rem, 2.7vw, 0.56rem); letter-spacing: 0.01em; }
+  .cycle-node .cn-tag { font-size: 0.44rem; }
 }
