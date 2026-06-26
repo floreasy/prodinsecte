@@ -21,6 +21,40 @@
     }, 4500);
   }
 
+  // Économie circulaire — roue interactive : cliquer une étape (ou un point)
+  // affiche son détail dans le panneau. Sur mobile, le panneau passe sous la roue.
+  // Amélioration progressive : sans JS, toutes les étapes restent visibles (empilées).
+  Array.prototype.forEach.call(document.querySelectorAll('.cycle-interactive'), function (ci) {
+    var panel = ci.querySelector('.cycle-panel');
+    if (!panel) return;
+    var nodes = ci.querySelectorAll('.cycle-node');
+    var slides = panel.querySelectorAll('.cp-slide');
+    var dots = panel.querySelectorAll('.cp-dot');
+    panel.classList.add('is-enhanced');
+
+    function activate(step) {
+      step = String(step);
+      Array.prototype.forEach.call(nodes, function (n) {
+        var on = n.getAttribute('data-step') === step;
+        n.classList.toggle('is-active', on);
+        n.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      Array.prototype.forEach.call(slides, function (s) {
+        s.classList.toggle('is-active', s.getAttribute('data-step') === step);
+      });
+      Array.prototype.forEach.call(dots, function (d) {
+        d.classList.toggle('is-active', d.getAttribute('data-step') === step);
+      });
+    }
+
+    Array.prototype.forEach.call(nodes, function (n) {
+      n.addEventListener('click', function () { activate(n.getAttribute('data-step')); });
+    });
+    Array.prototype.forEach.call(dots, function (d) {
+      d.addEventListener('click', function () { activate(d.getAttribute('data-step')); });
+    });
+  });
+
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Détection des transitions CSS gelées (certains environnements d'aperçu) :
