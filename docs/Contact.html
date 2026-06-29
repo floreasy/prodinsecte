@@ -84,7 +84,14 @@ form.sent + .form-success, form.sent .form-success { display: block; }
       <div class="contact-grid">
         <!-- Formulaire (envoi simulé, mailto en secours) -->
         <div class="contact-card reveal">
-          <form id="contact-form" novalidate="novalidate">
+          <form id="contact-form" action="https://formsubmit.co/florian.salado@gmail.com" method="POST" novalidate="novalidate">
+            <!-- FormSubmit : destinataire principal = action ci-dessus ; copie via _cc -->
+            <input type="hidden" name="_cc" value="prod.insectes06@gmail.com">
+            <input type="hidden" name="_subject" value="Nouveau message — site Prod'Insectes">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <!-- piège anti-spam : laissé vide par un humain, rempli par les robots -->
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px;">
             <div class="form-fields">
               <div class="field">
                 <label for="f-nom">Votre nom</label>
@@ -207,6 +214,8 @@ form.sent + .form-success, form.sent .form-success { display: block; }
 (function () {
   var form = document.getElementById('contact-form');
   if (!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+  var btnLabel = btn ? btn.textContent : 'Envoyer le message';
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var nom = document.getElementById('f-nom');
@@ -215,11 +224,32 @@ form.sent + .form-success, form.sent .form-success { display: block; }
     var err = document.getElementById('form-error');
     var ok = nom.value.trim() !== '' && /.+@.+\..+/.test(mail.value) && msg.value.trim() !== '';
     if (!ok) {
+      err.textContent = 'Merci de renseigner votre nom, un e-mail valide et un message.';
       err.style.display = 'block';
       return;
     }
     err.style.display = 'none';
-    form.classList.add('sent');
+    if (btn) { btn.disabled = true; btn.textContent = 'Envoi…'; }
+
+    // Envoi via FormSubmit (endpoint AJAX → on garde la page et le message de succès)
+    fetch('https://formsubmit.co/ajax/florian.salado@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data && (data.success === 'true' || data.success === true)) {
+          form.classList.add('sent');
+        } else {
+          throw new Error(data && data.message ? data.message : 'echec');
+        }
+      })
+      .catch(function () {
+        err.textContent = "L'envoi a échoué. Réessayez ou écrivez-nous directement à prod.insectes06@gmail.com.";
+        err.style.display = 'block';
+        if (btn) { btn.disabled = false; btn.textContent = btnLabel; }
+      });
   });
 })();
 </script>
