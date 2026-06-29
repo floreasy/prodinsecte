@@ -3,6 +3,45 @@
 <head>
 <meta charset="utf-8"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSKLV8MP2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Consent Mode v2 — mesure d'audience refusée par défaut (RGPD / CNIL)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  try {
+    if (localStorage.getItem('prodinsectes-consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {}
+
+  gtag('config', 'G-BSKLV8MP2N');
+</script>
+<script src="consent.js" defer></script>
+<link rel="canonical" href="https://www.prod-insectes.fr/demarche"></link>
+<meta property="og:type" content="website"></meta>
+<meta property="og:site_name" content="Prod'Insectes"></meta>
+<meta property="og:locale" content="fr_FR"></meta>
+<meta property="og:title" content="La démarche — Élevage d'insectes bio et économie circulaire à Antibes"></meta>
+<meta property="og:description" content="Victor Burte, docteur en agronomie, élève des vers de farine à Antibes en pratiques d'agriculture biologique : nourriture 100 % végétale issue d'invendus bio locaux, guano valorisé en engrais organique."></meta>
+<meta property="og:url" content="https://www.prod-insectes.fr/demarche"></meta>
+<meta property="og:image" content="https://www.prod-insectes.fr/assets/portrait-victor.jpg"></meta>
+<meta property="og:image:width" content="1100"></meta>
+<meta property="og:image:height" content="825"></meta>
+<meta property="og:image:alt" content="Victor Burte dans son élevage de vers de farine à Antibes"></meta>
+<meta name="twitter:card" content="summary_large_image"></meta>
+<meta name="twitter:title" content="La démarche — Prod'Insectes"></meta>
+<meta name="twitter:description" content="Victor Burte, docteur en agronomie, élève des vers de farine à Antibes en agriculture biologique, en économie circulaire."></meta>
+<meta name="twitter:image" content="https://www.prod-insectes.fr/assets/portrait-victor.jpg"></meta>
 <title>La démarche — Élevage d'insectes bio et économie circulaire à Antibes | Prod'Insectes</title>
 <meta name="description" content="Victor Burte, docteur en agronomie, élève des vers de farine à Antibes en pratiques d'agriculture biologique : nourriture 100 % végétale issue d'invendus bio locaux, guano valorisé en engrais organique."></meta>
 <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -16,6 +55,21 @@
 <link rel="manifest" href="/assets/favicon_io/site.webmanifest"></link>
 <meta name="theme-color" content="#E8DBBD"></meta>
 <script src="theme-boot.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Victor Burte",
+  "jobTitle": "Fondateur de Prod'Insectes, docteur en agronomie",
+  "description": "Docteur en fonctionnement des agrosystèmes, fondateur de Prod'Insectes, élevage artisanal de vers de farine à Antibes.",
+  "url": "https://www.prod-insectes.fr/demarche",
+  "worksFor": {
+    "@type": "Organization",
+    "@id": "https://www.prod-insectes.fr/#business",
+    "name": "Prod'Insectes"
+  }
+}
+</script>
 <style>
 .story p { font-size: 1.06rem; }
 .demarche-intro {
@@ -328,7 +382,10 @@
     </div>
     <div class="footer-baseline">
       <span>© 2026 Prod'Insectes — Antibes, Alpes-Maritimes</span>
-      <a href="#">Mentions légales</a>
+      <span class="footer-legal-links">
+        <a href="mentions-legales">Mentions légales</a>
+        <a href="#" data-cookie-settings>Gérer les cookies</a>
+      </span>
     </div>
   </div>
 </footer>

@@ -721,6 +721,7 @@ a.partner:hover { transform: translate(-2px, -3px); box-shadow: 4px 5px 0 var(--
   font-size: 0.82rem;
   opacity: 0.8;
 }
+.footer-legal-links { display: inline-flex; flex-wrap: wrap; gap: 18px; }
 .footer-brand {
   font-family: var(--font-head);
   font-weight: 900;
@@ -781,4 +782,52 @@ html.no-anim *, html.no-anim *::before, html.no-anim *::after {
   .cycle { max-width: min(300px, calc(100vw - 48px)); }
   .cycle-node .cn-dot { width: 42px; height: 42px; font-size: 0.92rem; }
   .cp-num { width: 42px; height: 42px; font-size: 1.05rem; }
+}
+
+/* ── Bannière de consentement aux cookies ───────────────────── */
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--paper);
+  color: var(--ink);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.24);
+  padding: 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  /* état initial (avant .in) : masqué et décalé vers le bas */
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.cookie-banner.in { opacity: 1; transform: none; }
+.cookie-text {
+  margin: 0;
+  flex: 1 1 320px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.cookie-actions {
+  display: flex;
+  gap: 12px;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+.cookie-actions .btn { padding: 10px 20px; }
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner { transition: none; }
+}
+@media (max-width: 560px) {
+  .cookie-banner { left: 10px; right: 10px; bottom: 10px; padding: 16px; }
+  .cookie-actions { width: 100%; }
+  .cookie-actions .btn { flex: 1; }
 }

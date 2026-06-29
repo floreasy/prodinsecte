@@ -3,6 +3,45 @@
 <head>
 <meta charset="utf-8"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSKLV8MP2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Consent Mode v2 — mesure d'audience refusée par défaut (RGPD / CNIL)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  try {
+    if (localStorage.getItem('prodinsectes-consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {}
+
+  gtag('config', 'G-BSKLV8MP2N');
+</script>
+<script src="consent.js" defer></script>
+<link rel="canonical" href="https://www.prod-insectes.fr/contact"></link>
+<meta property="og:type" content="website"></meta>
+<meta property="og:site_name" content="Prod'Insectes"></meta>
+<meta property="og:locale" content="fr_FR"></meta>
+<meta property="og:title" content="Contact — Prod'Insectes, élevage de vers de farine à Antibes"></meta>
+<meta property="og:description" content="Contactez Prod'Insectes à Antibes (Alpes-Maritimes) : commandes de vers de farine et d'engrais organique bio, demandes professionnelles et distribution."></meta>
+<meta property="og:url" content="https://www.prod-insectes.fr/contact"></meta>
+<meta property="og:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
+<meta property="og:image:width" content="890"></meta>
+<meta property="og:image:height" content="586"></meta>
+<meta property="og:image:alt" content="Vers de farine vivants Prod'Insectes"></meta>
+<meta name="twitter:card" content="summary_large_image"></meta>
+<meta name="twitter:title" content="Contact — Prod'Insectes"></meta>
+<meta name="twitter:description" content="Commandes, questions sur l'élevage ou points de vente : contactez Prod'Insectes à Antibes."></meta>
+<meta name="twitter:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
 <title>Contact — Prod'Insectes, élevage de vers de farine à Antibes</title>
 <meta name="description" content="Contactez Prod'Insectes à Antibes (Alpes-Maritimes) : commandes de vers de farine et d'engrais organique bio, demandes professionnelles et distribution."></meta>
 <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -209,7 +248,10 @@ form.sent + .form-success, form.sent .form-success { display: block; }
     </div>
     <div class="footer-baseline">
       <span>© 2026 Prod'Insectes — Antibes, Alpes-Maritimes</span>
-      <a href="#">Mentions légales</a>
+      <span class="footer-legal-links">
+        <a href="mentions-legales">Mentions légales</a>
+        <a href="#" data-cookie-settings>Gérer les cookies</a>
+      </span>
     </div>
   </div>
 </footer>
@@ -247,6 +289,7 @@ form.sent + .form-success, form.sent .form-success { display: block; }
       .then(function (data) {
         if (data && (data.success === 'true' || data.success === true)) {
           form.classList.add('sent');
+          if (window.gtag) gtag('event', 'generate_lead', { form: 'contact' });
         } else {
           throw new Error(data && data.message ? data.message : 'echec');
         }

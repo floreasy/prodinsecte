@@ -3,6 +3,45 @@
 <head>
 <meta charset="utf-8"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSKLV8MP2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Consent Mode v2 — mesure d'audience refusée par défaut (RGPD / CNIL)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  try {
+    if (localStorage.getItem('prodinsectes-consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {}
+
+  gtag('config', 'G-BSKLV8MP2N');
+</script>
+<script src="consent.js" defer></script>
+<link rel="canonical" href="https://www.prod-insectes.fr/produits"></link>
+<meta property="og:type" content="website"></meta>
+<meta property="og:site_name" content="Prod'Insectes"></meta>
+<meta property="og:locale" content="fr_FR"></meta>
+<meta property="og:title" content="Nos produits — Vers de farine, poudre d'insectes et engrais bio | Prod'Insectes"></meta>
+<meta property="og:description" content="Vers de farine vivants et déshydratés, poudre d'insectes enrichie et engrais organique bio issus de notre élevage à Antibes (Alpes-Maritimes). Alimentation animale naturelle, sans additifs."></meta>
+<meta property="og:url" content="https://www.prod-insectes.fr/produits"></meta>
+<meta property="og:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
+<meta property="og:image:width" content="890"></meta>
+<meta property="og:image:height" content="586"></meta>
+<meta property="og:image:alt" content="Vers de farine vivants Prod'Insectes"></meta>
+<meta name="twitter:card" content="summary_large_image"></meta>
+<meta name="twitter:title" content="Nos produits — Prod'Insectes"></meta>
+<meta name="twitter:description" content="Vers de farine vivants et déshydratés, poudre d'insectes et engrais organique bio, élevés à Antibes."></meta>
+<meta name="twitter:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
 <title>Nos produits — Vers de farine vivants, déshydratés, poudre et engrais bio | Prod'Insectes Antibes</title>
 <meta name="description" content="Vers de farine vivants et déshydratés, poudre d'insectes enrichie et engrais organique bio issus de notre élevage d'insectes à Antibes (Alpes-Maritimes). Alimentation animale naturelle, sans additifs."></meta>
 <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -280,7 +319,10 @@
     </div>
     <div class="footer-baseline">
       <span>© 2026 Prod'Insectes — Antibes, Alpes-Maritimes</span>
-      <a href="#">Mentions légales</a>
+      <span class="footer-legal-links">
+        <a href="mentions-legales">Mentions légales</a>
+        <a href="#" data-cookie-settings>Gérer les cookies</a>
+      </span>
     </div>
   </div>
 </footer>

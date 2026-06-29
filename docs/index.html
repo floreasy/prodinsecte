@@ -3,6 +3,45 @@
 <head>
 <meta charset="utf-8"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSKLV8MP2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Consent Mode v2 — mesure d'audience refusée par défaut (RGPD / CNIL)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  try {
+    if (localStorage.getItem('prodinsectes-consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch (e) {}
+
+  gtag('config', 'G-BSKLV8MP2N');
+</script>
+<script src="consent.js" defer></script>
+<link rel="canonical" href="https://www.prod-insectes.fr/"></link>
+<meta property="og:type" content="website"></meta>
+<meta property="og:site_name" content="Prod'Insectes"></meta>
+<meta property="og:locale" content="fr_FR"></meta>
+<meta property="og:title" content="Prod'Insectes — Élevage de vers de farine à Antibes | Alimentation animale naturelle"></meta>
+<meta property="og:description" content="Prod'Insectes élève des vers de farine à Antibes (Alpes-Maritimes) en pratiques d'agriculture biologique : alimentation animale naturelle, engrais organique bio et économie circulaire."></meta>
+<meta property="og:url" content="https://www.prod-insectes.fr/"></meta>
+<meta property="og:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
+<meta property="og:image:width" content="890"></meta>
+<meta property="og:image:height" content="586"></meta>
+<meta property="og:image:alt" content="Vers de farine vivants dans la main, élevage Prod'Insectes"></meta>
+<meta name="twitter:card" content="summary_large_image"></meta>
+<meta name="twitter:title" content="Prod'Insectes — Élevage de vers de farine à Antibes"></meta>
+<meta name="twitter:description" content="Vers de farine élevés à Antibes en pratiques d'agriculture biologique : alimentation animale naturelle, engrais organique bio et économie circulaire."></meta>
+<meta name="twitter:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
 <title>Prod'Insectes — Élevage de vers de farine à Antibes | Alimentation animale naturelle</title>
 <meta name="description" content="Prod'Insectes élève des vers de farine à Antibes (Alpes-Maritimes) en pratiques d'agriculture biologique : alimentation animale naturelle, engrais organique bio et économie circulaire."></meta>
 <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -16,6 +55,51 @@
 <link rel="manifest" href="/assets/favicon_io/site.webmanifest"></link>
 <meta name="theme-color" content="#E8DBBD"></meta>
 <script src="theme-boot.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.prod-insectes.fr/#business",
+      "name": "Prod'Insectes",
+      "url": "https://www.prod-insectes.fr/",
+      "logo": "https://www.prod-insectes.fr/assets/logo-prod-insectes.png",
+      "image": "https://www.prod-insectes.fr/assets/slide-vers.jpg",
+      "description": "Élevage artisanal de vers de farine (Tenebrio molitor) à Antibes, en pratiques d'agriculture biologique : alimentation animale naturelle, engrais organique bio et économie circulaire.",
+      "email": "prod.insectes06@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Victor Burte",
+        "jobTitle": "Fondateur, docteur en agronomie"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Antibes",
+        "addressRegion": "Alpes-Maritimes",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.5808,
+        "longitude": 7.1239
+      },
+      "areaServed": "Alpes-Maritimes",
+      "sameAs": [
+        "https://www.linkedin.com/company/prod-insectes"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.prod-insectes.fr/#website",
+      "url": "https://www.prod-insectes.fr/",
+      "name": "Prod'Insectes",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://www.prod-insectes.fr/#business" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -368,7 +452,10 @@
     </div>
     <div class="footer-baseline">
       <span>© 2026 Prod'Insectes — Antibes, Alpes-Maritimes</span>
-      <a href="#">Mentions légales</a>
+      <span class="footer-legal-links">
+        <a href="mentions-legales">Mentions légales</a>
+        <a href="#" data-cookie-settings>Gérer les cookies</a>
+      </span>
     </div>
   </div>
 </footer>
