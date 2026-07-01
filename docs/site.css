@@ -600,6 +600,15 @@ p:last-child { margin-bottom: 0; }
 }
 .cp-slide p { margin: 14px 0 0; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
 .cp-slide p + p { margin-top: 12px; }
+.cp-photo {
+  display: block;
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border: var(--border);
+  border-radius: 8px;
+  margin-top: 18px;
+}
 /* Pagination (points) — visible uniquement avec JS */
 .cp-progress { display: flex; gap: 8px; margin-top: 22px; }
 .cycle-panel:not(.is-enhanced) .cp-progress { display: none; }
