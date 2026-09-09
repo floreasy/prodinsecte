@@ -129,9 +129,10 @@ form.sent + .form-success, form.sent .form-success { display: block; }
       <div class="contact-grid">
         <!-- Formulaire (envoi simulé, mailto en secours) -->
         <div class="contact-card reveal">
-          <form id="contact-form" action="https://formsubmit.co/florian.salado@gmail.com" method="POST" novalidate="novalidate">
-            <!-- FormSubmit : destinataire principal = action ci-dessus ; copie via _cc -->
-            <input type="hidden" name="_cc" value="prod.insectes06@gmail.com">
+          <form id="contact-form" action="https://formsubmit.co/prod.insectes06@gmail.com" method="POST" novalidate="novalidate">
+            <!-- FormSubmit : destinataire unique = action ci-dessus. Pour remettre
+                 Marie & Flow en copie, ajouter :
+                 <input type="hidden" name="_cc" value="florian.salado@gmail.com"> -->
             <input type="hidden" name="_subject" value="Nouveau message — site Prod'Insectes">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
@@ -289,7 +290,7 @@ form.sent + .form-success, form.sent .form-success { display: block; }
     if (btn) { btn.disabled = true; btn.textContent = 'Envoi…'; }
 
     // Envoi via FormSubmit (endpoint AJAX → on garde la page et le message de succès)
-    fetch('https://formsubmit.co/ajax/florian.salado@gmail.com', {
+    fetch('https://formsubmit.co/ajax/prod.insectes06@gmail.com', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: new FormData(form)
