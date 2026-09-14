@@ -44,9 +44,12 @@
 <meta name="twitter:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
 <title>Prod'Insectes — Élevage de vers de farine à Antibes | Alimentation animale naturelle</title>
 <meta name="description" content="Prod'Insectes élève des vers de farine à Antibes (Alpes-Maritimes) en pratiques d'agriculture biologique : alimentation animale naturelle, engrais organique bio et économie circulaire."></meta>
-<link rel="preconnect" href="https://fonts.googleapis.com"></link>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&amp;family=Bricolage+Grotesque:wght@500;700;800&amp;family=Karla:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"></link>
+<!-- Polices auto-hébergées : plus de DNS ni de TLS vers Google avant le rendu.
+     Voir scripts/polices.mjs. Les deux préchargements couvrent les familles
+     visibles avant tout défilement. -->
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-700-latin.woff2" crossorigin></link>
+<link rel="preload" as="font" type="font/woff2" href="fonts/karla-400-latin.woff2" crossorigin></link>
+<link rel="stylesheet" href="fonts.css"></link>
 <link rel="stylesheet" href="site.css?v=20260701"></link>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png"></link>
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png"></link>
@@ -192,7 +195,7 @@
   <!-- ── La démarche (teaser) ──────────────────────────────── -->
   <section class="split band-paper" data-screen-label="La démarche">
     <div class="split-media">
-      <img src="assets/portrait-victor.jpg" alt="Victor Burte dans son élevage de vers de farine à Antibes">
+      <img src="assets/portrait-victor.webp" alt="Victor Burte dans son élevage de vers de farine à Antibes">
     </div>
     <div class="split-text reveal">
       <span class="kicker">Qui suis-je <span class="dot">●</span> La démarche</span>
@@ -273,12 +276,12 @@
         <article class="cp-slide is-active" data-step="0">
           <div class="cp-head"><span class="cp-num">1</span><h3>Invendus bio locaux</h3></div>
           <p>Mise en place d'un circuit de récupération de produits frais biologiques invendus ou non consommables auprès des distributeurs et agriculteurs bio locaux.</p>
-          <img class="cp-photo" src="assets/invendus-bio-locaux.jpg" alt="Cagette d'invendus bio locaux récupérés : bananes, pommes, courgettes et aubergines" loading="lazy">
+          <img class="cp-photo" src="assets/invendus-bio-locaux.webp" alt="Cagette d'invendus bio locaux récupérés : bananes, pommes, courgettes et aubergines" loading="lazy">
         </article>
         <article class="cp-slide" data-step="1">
           <div class="cp-head"><span class="cp-num">2</span><h3>Nourriture de l'élevage</h3></div>
           <p>Les vers sont nourris avec des denrées biologiques non transformées (céréales, fruits, légumes et champignons).</p>
-          <img class="cp-photo" src="assets/nourriture-elevage.jpg" alt="Bacs d'élevage de vers de farine sur flocons d'avoine, nourris de morceaux de poivron, courgette et fruits" loading="lazy">
+          <img class="cp-photo" src="assets/nourriture-elevage.webp" alt="Bacs d'élevage de vers de farine sur flocons d'avoine, nourris de morceaux de poivron, courgette et fruits" loading="lazy">
         </article>
         <article class="cp-slide" data-step="2">
           <div class="cp-head"><span class="cp-num">3</span><h3>Vers de farine</h3></div>
@@ -323,7 +326,7 @@
       </div>
       <div class="product-grid">
         <a class="product-card reveal" href="produits#vivants" style="--d: 0s;">
-          <span class="pc-img"><img src="assets/vers-vivants.jpg" alt="Barquette de vers de farine vivants Prod'Insectes 50 g"></span>
+          <span class="pc-img"><img src="assets/vers-vivants.webp" alt="Barquette de vers de farine vivants Prod'Insectes 50 g"></span>
           <span class="pc-body">
             <h3>Vers de farine vivants</h3>
             <span class="pc-meta">50 g ou 100 g · Oiseaux, reptiles, rongeurs, jardin</span>
@@ -331,7 +334,7 @@
           </span>
         </a>
         <a class="product-card reveal" href="produits#deshydrates" style="--d: 0.08s;">
-          <span class="pc-img"><img src="assets/vers-deshydrates.jpg" alt="Sachet de vers de farine déshydratés Prod'Insectes 150 g"></span>
+          <span class="pc-img"><img src="assets/vers-deshydrates.webp" alt="Sachet de vers de farine déshydratés Prod'Insectes 150 g"></span>
           <span class="pc-body">
             <h3>Vers de farine déshydratés</h3>
             <span class="pc-meta">150 g ou 750 g · Basse-cour, poissons, reptiles</span>
@@ -339,7 +342,7 @@
           </span>
         </a>
         <a class="product-card reveal" href="produits#poudre" style="--d: 0.16s;">
-          <span class="pc-img"><img src="assets/poudre-insectes.jpg" alt="Boîte de poudre d'insectes enrichie Prod'Insectes 25 g"></span>
+          <span class="pc-img"><img src="assets/poudre-insectes.webp" alt="Boîte de poudre d'insectes enrichie Prod'Insectes 25 g"></span>
           <span class="pc-body">
             <h3>Poudre d'insectes enrichie</h3>
             <span class="pc-meta">25 g · Poissons et crustacés d'aquarium</span>
@@ -347,7 +350,7 @@
           </span>
         </a>
         <a class="product-card reveal" href="produits#engrais" style="--d: 0.24s;">
-          <span class="pc-img"><img src="assets/engrais.jpg" alt="Sachet d'engrais naturel Prod'Insectes 750 g, utilisable en agriculture biologique"></span>
+          <span class="pc-img"><img src="assets/engrais.webp" alt="Sachet d'engrais naturel Prod'Insectes 750 g, utilisable en agriculture biologique"></span>
           <span class="pc-body">
             <h3>Engrais organique</h3>
             <span class="pc-meta">750 g ou 10 kg · Utilisable en agriculture biologique</span>
