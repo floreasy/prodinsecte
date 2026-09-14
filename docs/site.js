@@ -11,12 +11,32 @@
   }
 
   // Diaporama du hero (Accueil)
+  //
+  // Seule la première diapositive a un src dans le HTML ; les six autres portent
+  // un data-src et sont chargées ici, une fois la page rendue. On ne peut pas se
+  // contenter de loading="lazy" : elles sont empilées en position absolue avec
+  // opacity:0, donc dans le viewport du point de vue du navigateur, qui les
+  // chargerait immédiatement. Elles pèsent ~1,4 Mo à elles seules et repoussaient
+  // l'affichage du hero.
   var heroSlides = document.querySelectorAll('.hero-slides img');
   if (heroSlides.length > 1) {
+    var chargerDiapo = function (img) {
+      var src = img && img.getAttribute('data-src');
+      if (src) { img.src = src; img.removeAttribute('data-src'); }
+    };
+    var chargerToutes = function () {
+      Array.prototype.forEach.call(heroSlides, chargerDiapo);
+    };
+    if (document.readyState === 'complete') chargerToutes();
+    else window.addEventListener('load', chargerToutes);
+
     var si = 0;
     setInterval(function () {
       heroSlides[si].classList.remove('active');
       si = (si + 1) % heroSlides.length;
+      // Filet de sécurité : si 'load' n'a pas encore eu lieu, on charge au moins
+      // celle qu'on s'apprête à montrer.
+      chargerDiapo(heroSlides[si]);
       heroSlides[si].classList.add('active');
     }, 4500);
   }

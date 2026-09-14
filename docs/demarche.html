@@ -44,9 +44,12 @@
 <meta name="twitter:image" content="https://www.prod-insectes.fr/assets/portrait-victor.jpg"></meta>
 <title>La démarche — Élevage d'insectes bio et économie circulaire à Antibes | Prod'Insectes</title>
 <meta name="description" content="Victor Burte, docteur en agronomie, élève des vers de farine à Antibes en pratiques d'agriculture biologique : nourriture 100 % végétale issue d'invendus bio locaux, guano valorisé en engrais organique."></meta>
-<link rel="preconnect" href="https://fonts.googleapis.com"></link>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"></link>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&amp;family=Bricolage+Grotesque:wght@500;700;800&amp;family=Karla:wght@400;500;700&amp;family=Source+Sans+3:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"></link>
+<!-- Polices auto-hébergées : plus de DNS ni de TLS vers Google avant le rendu.
+     Voir scripts/polices.mjs. Les deux préchargements couvrent les familles
+     visibles avant tout défilement. -->
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-700-latin.woff2" crossorigin></link>
+<link rel="preload" as="font" type="font/woff2" href="fonts/karla-400-latin.woff2" crossorigin></link>
+<link rel="stylesheet" href="fonts.css"></link>
 <link rel="stylesheet" href="site.css?v=20260701"></link>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png"></link>
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png"></link>
@@ -163,7 +166,7 @@
           colorant, sans protéine animale, avec une nourriture 100&nbsp;% végétale.
         </p>
       </div>
-      <img class="demarche-photo reveal" style="--d: 0.15s;" src="assets/marche-producteur.jpg" alt="Victor Burte sur son stand au marché de producteurs">
+      <img class="demarche-photo reveal" style="--d: 0.15s;" src="assets/marche-producteur.webp" alt="Victor Burte sur son stand au marché de producteurs">
     </div>
   </section>
 
@@ -280,12 +283,12 @@
         <article class="cp-slide is-active" data-step="0">
           <div class="cp-head"><span class="cp-num">1</span><h3>Invendus bio locaux</h3></div>
           <p>Mise en place d'un circuit de récupération de produits frais biologiques invendus ou non consommables auprès des distributeurs et agriculteurs bio locaux.</p>
-          <img class="cp-photo" src="assets/invendus-bio-locaux.jpg" alt="Cagette d'invendus bio locaux récupérés : bananes, pommes, courgettes et aubergines" loading="lazy">
+          <img class="cp-photo" src="assets/invendus-bio-locaux.webp" alt="Cagette d'invendus bio locaux récupérés : bananes, pommes, courgettes et aubergines" loading="lazy">
         </article>
         <article class="cp-slide" data-step="1">
           <div class="cp-head"><span class="cp-num">2</span><h3>Nourriture de l'élevage</h3></div>
           <p>Les vers sont nourris avec des denrées biologiques non transformées (céréales, fruits, légumes et champignons).</p>
-          <img class="cp-photo" src="assets/nourriture-elevage.jpg" alt="Bacs d'élevage de vers de farine sur flocons d'avoine, nourris de morceaux de poivron, courgette et fruits" loading="lazy">
+          <img class="cp-photo" src="assets/nourriture-elevage.webp" alt="Bacs d'élevage de vers de farine sur flocons d'avoine, nourris de morceaux de poivron, courgette et fruits" loading="lazy">
         </article>
         <article class="cp-slide" data-step="2">
           <div class="cp-head"><span class="cp-num">3</span><h3>Vers de farine</h3></div>
