@@ -43,7 +43,7 @@
 <meta name="twitter:description" content="Vers de farine vivants et déshydratés, poudre d'insectes et engrais organique bio, élevés à Antibes."></meta>
 <meta name="twitter:image" content="https://www.prod-insectes.fr/assets/slide-vers.jpg"></meta>
 <title>Nos produits — Vers de farine vivants, déshydratés, poudre et engrais bio | Prod'Insectes Antibes</title>
-<meta name="description" content="Vers de farine vivants et déshydratés, poudre d'insectes enrichie et engrais organique bio issus de notre élevage d'insectes à Antibes (Alpes-Maritimes). Alimentation animale naturelle, sans additifs."></meta>
+<meta name="description" content="Vers de farine vivants et déshydratés, poudre d'insectes enrichie et engrais organique universel issus de notre élevage d'insectes à Antibes (Alpes-Maritimes). Sans minimum d'achat, en livraison ou en retrait."></meta>
 <!-- Polices auto-hébergées : plus de DNS ni de TLS vers Google avant le rendu.
      Voir scripts/polices.mjs. Les deux préchargements couvrent les familles
      visibles avant tout défilement. -->
@@ -94,6 +94,50 @@
   letter-spacing: 0.16em;
   margin: 26px 0 14px;
 }
+/* Disponibilité : ocre = délai en cours, vert = en stock */
+.ps-stock { margin: 12px 0 0; font-size: 0.9rem; font-weight: 700; color: var(--ocre-deep); }
+.ps-stock::before { content: "● "; font-size: 0.8em; }
+.ps-stock.is-ok { color: var(--green-deep); }
+.ps-usage { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.ps-usage li {
+  border: var(--border);
+  border-radius: 8px;
+  background: var(--paper);
+  padding: 14px 18px;
+  display: grid;
+  gap: 4px;
+}
+.ps-usage strong { font-family: var(--font-head); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.ps-usage span { font-size: 0.95rem; color: var(--ink-soft); }
+.ps-caution { margin: 14px 0 0; }
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.order-card {
+  background: var(--kraft);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.order-card h3 { font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin: 0; }
+.order-card p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+.order-rates { list-style: none; margin: 0; padding: 0; }
+.order-rates li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1.5px dashed rgba(42, 32, 20, 0.3);
+}
+.order-rates li:first-child { padding-top: 0; }
+.order-rates strong { font-family: var(--font-head); white-space: nowrap; }
+.order-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
 @media (max-width: 880px) {
   .product-sheet { grid-template-columns: 1fr; }
   .product-sheet.flip .ps-photo { order: 0; }
@@ -129,7 +173,8 @@
         <p class="lead">
           Tout vient de nos vers de farine (<em>Tenebrio molitor</em>), élevés en pratiques
           d'agriculture biologique : 100&nbsp;% d'origine naturelle, sans colorants ni additifs,
-          nourris exclusivement de végétal. Commande par mail en attendant la boutique en ligne.
+          nourris exclusivement de végétal. Commande par mail ou SMS, sans minimum d'achat —
+          <a href="#commander">en livraison ou en retrait</a>.
         </p>
       </div>
       <div class="badges">
@@ -153,14 +198,15 @@
         <h2 class="section-title">Vers de farine vivants</h2>
         <p>
           Très riches en protéines et lipides, les vers de farine vivants sont le complément
-          alimentaire idéal de vos animaux domestiques — oiseaux, reptiles, rongeurs… — et un
-          coup de pouce pour les petits habitants de votre jardin.
+          alimentaire idéal des reptiles et amphibiens, des oiseaux et des rongeurs — et un
+          coup de pouce pour les hérissons et autres petits habitants de votre jardin.
         </p>
         <p class="ps-note">Alimentation 100&nbsp;% végétale et biologique. Contient des flocons d'avoine.</p>
         <div class="ps-formats">
           <div class="ps-format"><strong>50 g</strong><span>4,5 €</span><span class="ps-ship">Produit non expédiable</span></div>
           <div class="ps-format"><strong>100 g</strong><span>9 €</span><span class="ps-ship">Produit non expédiable</span></div>
         </div>
+        <p class="ps-stock">Délai actuel&nbsp;: un mois minimum, le temps de reconstituer le stock</p>
         <p class="ps-compo-title">Composition principale</p>
         <div class="gauges">
           <div class="gauge"><span class="g-label">Protéines</span><span class="g-track"><span class="g-fill" data-w="20"></span></span><span class="g-val">20 %</span></div>
@@ -184,9 +230,10 @@
         <span class="kicker">Déshydratés <span class="dot">●</span> 150 g ou 750 g</span>
         <h2 class="section-title">Vers de farine déshydratés</h2>
         <p>
-          La friandise saine, riche en protéines, pour la basse-cour, les poissons, reptiles,
-          oiseaux et rongeurs. Pratique à conserver et à distribuer en complément de
-          l'alimentation principale — et elle renforce la coquille des œufs.
+          La friandise saine, riche en protéines, pour les poules et la basse-cour, les carpes
+          et autres poissons, mais aussi les reptiles, oiseaux et rongeurs. Pratique à conserver
+          et à distribuer en complément de l'alimentation principale — et elle renforce la
+          coquille des œufs.
         </p>
         <p class="ps-note">
           Peut contenir différents stades de la larve ainsi que des traces de flocons d'avoine.
@@ -195,6 +242,7 @@
           <div class="ps-format"><strong>150 g</strong><span>12,5 €</span></div>
           <div class="ps-format"><strong>750 g</strong><span>60 €</span></div>
         </div>
+        <p class="ps-stock">Délai actuel&nbsp;: un mois minimum, le temps de reconstituer le stock</p>
         <p class="ps-compo-title">Composition principale (pour 100 g)</p>
         <div class="gauges">
           <div class="gauge"><span class="g-label">Protéines</span><span class="g-track"><span class="g-fill" data-w="51.8"></span></span><span class="g-val">51,8 g</span></div>
@@ -225,6 +273,7 @@
         <div class="ps-formats">
           <div class="ps-format"><strong>25 g</strong><span>7 €</span></div>
         </div>
+        <p class="ps-stock">Délai actuel&nbsp;: un mois minimum, le temps de reconstituer le stock</p>
         <p class="ps-compo-title">Composition principale (pour 100 g)</p>
         <div class="gauges">
           <div class="gauge"><span class="g-label">Protéines</span><span class="g-track"><span class="g-fill" data-w="41.8"></span></span><span class="g-val">41,8 g</span></div>
@@ -241,22 +290,24 @@
   <section class="band" id="engrais" data-screen-label="Produit — Engrais organique">
     <div class="container product-sheet flip">
       <figure class="photo-frame ps-photo reveal" style="--rot: 1.5deg; margin: 0;">
-        <img src="assets/engrais.webp" alt="Sachet d'engrais naturel Prod'Insectes 750 g, riche en chitine, utilisable en agriculture biologique">
-        <figcaption>Engrais naturel — sachet 750 g</figcaption>
+        <img src="assets/engrais-600g.webp" alt="Sachet d'engrais organique naturel Prod'Insectes 600 g, riche en chitine, utilisable en agriculture biologique">
+        <figcaption>Engrais organique naturel — sachet 600 g</figcaption>
       </figure>
       <div class="reveal" style="--d: 0.1s;">
-        <span class="kicker">Jardinage <span class="dot">●</span> 750 g ou 10 kg</span>
+        <span class="kicker">Jardinage <span class="dot">●</span> 600 g ou 10 kg</span>
         <h2 class="section-title">Engrais organique</h2>
         <p>
-          Engrais organique solide macronutritionnel, issu du guano de notre élevage.
-          Riche en chitine pour stimuler les défenses naturelles des plantes — plantes
-          d'intérieur, potager, agrumes. Il retient l'eau et dégage peu d'odeur.
+          Un engrais organique et universel, produit à partir de notre élevage de vers de farine.
+          Plantes d'intérieur, potager, plantes de terrasse&nbsp;: il revitalise toutes vos plantes,
+          et tout particulièrement les agrumes. Riche en chitine, il stimule leurs défenses
+          naturelles, les nourrit durablement et aide à retenir l'eau — en dégageant peu d'odeur.
         </p>
-        <p class="ps-note">Utilisable en Agriculture Biologique. Précautions d'emploi à respecter.</p>
+        <p class="ps-note">Utilisable en Agriculture Biologique.</p>
         <div class="ps-formats">
-          <div class="ps-format"><strong>750 g</strong><span>9,5 €</span></div>
+          <div class="ps-format"><strong>600 g</strong><span>8,5 €</span></div>
           <div class="ps-format"><strong>10 kg</strong><span>100 €</span><span class="ps-ship">Produit non expédiable</span></div>
         </div>
+        <p class="ps-stock is-ok">En stock — livré en 5 jours ouvrés</p>
         <p class="ps-compo-title">Équilibre N · P · K</p>
         <div class="badges">
           <span class="badge badge-green">Azote (N) — 4</span>
@@ -264,18 +315,72 @@
           <span class="badge badge-green">Potassium (K) — 2</span>
           <span class="badge">Riche en chitine</span>
         </div>
+        <p class="ps-compo-title">Mode d'emploi</p>
+        <ul class="ps-usage">
+          <li><strong>En arrosage — une fois par mois</strong><span>Diluez 4 cuillères à soupe dans 1 litre d'eau pour un arrosage enrichi en engrais.</span></li>
+          <li><strong>En surface — trois fois par an</strong><span>Saupoudrez la terre au pied des plantes, pour une diffusion lente et progressive. Généralement en mars, en juillet et en octobre.</span></li>
+        </ul>
+        <p class="ps-note ps-caution">
+          <strong>Précautions d'emploi&nbsp;:</strong> ne pas inhaler ni ingérer. Le produit est
+          assez abrasif&nbsp;: portez des gants pour le manipuler.
+        </p>
         <a class="btn btn-primary" href="mailto:prod.insectes06@gmail.com?subject=Commande%20—%20Engrais%20organique" style="margin-top: 26px;">Commander par mail</a>
       </div>
     </div>
   </section>
 
+  <!-- ── Commander : livraison, délais, retrait ────────────── -->
+  <section class="band band-paper" id="commander" data-screen-label="Commander — livraison et retrait">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Commander <span class="dot">●</span> Sans minimum d'achat</span>
+        <h2 class="section-title">Livraison ou retrait</h2>
+        <p class="lead">
+          Une commande se passe par mail, par téléphone ou par SMS, sans minimum d'achat.
+          Vous choisissez ensuite&nbsp;: expédition, ou retrait près d'Antibes.
+        </p>
+      </div>
+      <div class="order-grid">
+        <div class="order-card reveal">
+          <h3>Frais de port</h3>
+          <ul class="order-rates">
+            <li><span>Moins de 1 kg</span><strong>7 €</strong></li>
+            <li><span>De 1 à 2 kg</span><strong>10 €</strong></li>
+            <li><span>Au-delà de 2 kg</span><strong>Sur devis</strong></li>
+          </ul>
+          <p>Expédition en France métropolitaine. Au-delà de 2 kg, les frais dépendent des
+          produits et du poids&nbsp;: on en discute ensemble. Les vers vivants et le sac d'engrais
+          de 10 kg ne sont pas expédiés.</p>
+        </div>
+        <div class="order-card reveal" style="--d: 0.1s;">
+          <h3>Délais</h3>
+          <ul class="order-rates">
+            <li><span>Engrais organique</span><strong>5 jours ouvrés</strong></li>
+            <li><span>Vers et poudre d'insectes</span><strong>1 mois minimum</strong></li>
+          </ul>
+          <p>L'engrais est en stock. Pour les insectes, le stock est en cours de
+          reconstitution&nbsp;: comptez au moins un mois en ce moment.</p>
+        </div>
+        <div class="order-card reveal" style="--d: 0.2s;">
+          <h3>Retrait sur rendez-vous</h3>
+          <p>Envoyez un mail ou un SMS pour convenir d'un jour et d'une heure — et même d'un
+          lieu&nbsp;: nous pouvons aussi nous déplacer dans les environs d'Antibes.</p>
+          <div class="order-actions">
+            <a class="btn btn-primary" href="mailto:prod.insectes06@gmail.com?subject=Commande%20—%20Prod'Insectes">Écrire un mail</a>
+            <a class="btn btn-outline" href="sms:+33671764820">Envoyer un SMS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Bientôt + pros ────────────────────────────────────── -->
-  <section class="band band-tight band-paper" data-screen-label="Bientôt et professionnels">
+  <section class="band band-tight" data-screen-label="Bientôt et professionnels">
     <div class="container" style="display: grid; gap: 24px;">
       <div class="callout reveal">
         <div class="co-text">
           <h3>Bientôt — farine d'insectes</h3>
-          <p>Une farine de vers de farine est en cours de développement. Intéressé·e ? Dites-le-nous, vous serez prévenu·e en premier.</p>
+          <p>La farine de vers de farine verra le jour dès que l'élevage dégagera un surplus de larves. Intéressé·e ? Dites-le-nous, vous serez prévenu·e en premier.</p>
         </div>
         <a class="btn btn-outline" href="mailto:prod.insectes06@gmail.com?subject=Farine%20d'insectes%20—%20tenez-moi%20au%20courant">Me tenir au courant</a>
       </div>
